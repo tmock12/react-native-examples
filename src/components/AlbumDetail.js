@@ -4,7 +4,7 @@ import Card from "./Card";
 import CardSection from "./CardSection";
 
 const AlbumDetail = ({ album }) => {
-  const { title, artist, thumbnail_image } = album;
+  const { title, artist, thumbnail_image, image } = album;
 
   return (
     <Card>
@@ -20,6 +20,9 @@ const AlbumDetail = ({ album }) => {
             {artist}
           </Text>
         </View>
+      </CardSection>
+      <CardSection>
+        <Image source={{ uri: image }} style={styles.primaryImage} />
       </CardSection>
     </Card>
   );
@@ -42,6 +45,11 @@ const styles = {
   },
   cardHeaderText: {
     fontSize: 18
+  },
+  primaryImage: {
+    height: 300,
+    flex: 1,
+    width: null
   }
 };
 
